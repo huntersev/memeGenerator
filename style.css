@@ -8,8 +8,7 @@
 }
 
 header {
-  background-color: rgb(80, 80, 80);
-  color: white;
+  background-color: rgba(173, 173, 173, 0.5);
 }
 
 h1 {
@@ -55,6 +54,11 @@ button {
 }
 
 #memeDisplay {
-  background-color: rgb(80, 80, 80);
+  background-color: rgba(173, 173, 173, 0.5);
   height: 100vh;
+}
+
+canvas {
+  width: 33%;
+  border: black 1px solid;
 }
