@@ -62,6 +62,10 @@ document.addEventListener('DOMContentLoaded', function() {
     ctx.strokeText(bottomText.value, width / 2, height - yOffset);
     ctx.fillText(bottomText.value, width / 2, height - yOffset);
     formObject.reset();
+
+    canvas.addEventListener('click', () => {
+      canvas.remove();
+    });
   };
 
 })
