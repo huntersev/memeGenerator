@@ -53,9 +53,27 @@ button {
   font-size: 20px;
 }
 
-#memeDisplay {
-  background-color: rgba(173, 173, 173, 0.5);
-  height: 100vh;
+.meme {
+  /* background-color: rgba(173, 173, 173, 0.5); */
+  background-image: url("");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50vh;
+  width: 50%;
+  border: 2px black solid;
+}
+
+.meme:hover {
+  background-color: crimson;
+}
+
+.top-meme-text {
+  text-align: center;
+}
+
+.bottom-meme-text {
+  text-align: center;
 }
 
 canvas {
