@@ -1,40 +1,45 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-  const imgFile = document.querySelector('#imgFile');
-  const topText = document.querySelector('#topText')
+  //const imgFile = document.querySelector('#imgFile');
+  const imgUrl = document.querySelector('#imgUrl');
+  const topText = document.querySelector('#topText');
   const bottomText = document.querySelector('#bottomText');
-  const memeDisplay = document.querySelector('#memeDisplay')
+  const memeDisplay = document.querySelector('#memeDisplay');
   const addMemeBtn = document.querySelector('#addMemeBtn');
   const formObject = document.querySelector('#formObject');
 
-  let image;
+  //let image;
 
   addMemeBtn.addEventListener("click", (e) => {
-    if (document.getElementById('imgFile').value === ''){
+    if (document.getElementById('imgUrl').value === ''){
       e.preventDefault();
-      alert('Please select an Image.');
+      alert('Please select an Image URL.');
     } else {
-    const imgDataUrl = URL.createObjectURL(imgFile.files[0]);
+    //const imgDataUrl = URL.createObjectURL(imgUrl.value);
 
     e.preventDefault();
+    addMeme(imgUrl, topText.value,bottomText.value);
 
-    image = new Image();  //converting imgUrl to htmlImg for later
-    image.src = imgDataUrl; 
+    //image = new Image();  //converting imgUrl to htmlImg for later
+    //image.src = imgDataUrl; 
 
-    image.addEventListener('load', () => { //once image is loaded, run addMeme funct
-      addMeme(imgDataUrl, topText.value,bottomText.value);
-
-    }, { once: true });
+    //image.addEventListener('load', () => { 
+    //addMeme(imgDataUrl, topText.value,bottomText.value);
+    //}, { once: true });
   };
   });
 
   function addMeme() {
+    console.log(imgUrl.value);
+    console.log(topText.value);
+    console.log(bottomText.value);
     // step 1
     const meme = document.createElement("div");
     meme.class = 'meme';
+    document.getElementById('memeDisplay').appendChild(meme);
     // set background image prop to image url
-    console.log(imgDataUrl);
-    document.getElementsByClassName('meme').style.backgroundImage = 'url('+image+')';
+    document.getElementsByClassName('meme').style.cssText +=`background-image:url(${imgUrl})`;
+    document.getElementsByClassName('meme').style.background = 'url('+imgUrl+')';
     
     
     // step2 a
@@ -58,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // append bottom text h4 -> meme
     document.getElementsByClassName('meme').appendChild(h4);
 
+
     
     
     // step 3
@@ -66,8 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
       meme.remove();
     });
     
-    // append meme to #meme-display
-    document.getElementById('memeDisplay').appendChild(meme);
+
     };
   
     //  OLD FUNCTION //
