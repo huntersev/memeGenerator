@@ -54,18 +54,18 @@ button {
 }
 
 #memeDisplay {
-  background-color: rgba(173, 173, 173, 0.5);
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
   height: 100vh;
 }
 
 .meme {
-  background-image: url("https://slang.net/img/slang/doge_3536.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 50vh;
-  width: 50%;
+  width: 49.5%;
   border: 2px solid black;
 }
 
@@ -79,7 +79,7 @@ button {
   text-align: center;
   color: white;
   -webkit-text-stroke: 2px black;
-  bottom: 20%;
+  bottom: 15%;
 }
 
 .bottom-meme-text {
@@ -88,7 +88,7 @@ button {
   text-align: center;
   color: white;
   -webkit-text-stroke: 2px black;
-  top: 20%;
+  top: 30%;
 }
 
 canvas {

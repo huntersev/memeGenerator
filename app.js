@@ -35,43 +35,42 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log(bottomText.value);
     // step 1
     const meme = document.createElement("div");
-    meme.class = 'meme';
+    meme.className = 'meme';
     document.getElementById('memeDisplay').appendChild(meme);
+
     // set background image prop to image url
-    document.getElementsByClassName('meme').style.cssText +=`background-image:url(${imgUrl})`;
-    document.getElementsByClassName('meme').style.background = 'url('+imgUrl+')';
+    meme.style.backgroundImage = 'url('+imgUrl.value+')';
     
     
     // step2 a
     // create h4 tag
-    document.createElement('h4');
+    const h4 = document.createElement('h4');
     // class top-text top-meme-text
-    h4.class = 'top-meme-text';
+    h4.className = 'top-meme-text';
     // insert top text
-    document.getElementsByClassName('top-meme-text').innerText = topText.value;
+    h4.innerText = topText.value;
     // append top text h4 -> meme
-    document.getElementsByClassName('meme').appendChild(h4);
+    meme.appendChild(h4);
+
     
     
     // step 2 b
     // create h4 tag
-    document.createElement('h4');
+    const h3 = document.createElement('h3');
     // class bottom-text bottom-meme-text
-    h4.class = 'bottom-meme-text';
+    h3.className = 'bottom-meme-text';
     // insert bottom text
-    document.getElementsByClassName('bottom-meme-text').innerText = bottomText.value;
+    h3.innerText = bottomText.value;
     // append bottom text h4 -> meme
-    document.getElementsByClassName('meme').appendChild(h4);
+    meme.appendChild(h3);
+  
+    formObject.reset();
 
-
-    
-    
     // step 3
     // addEventListener for removal
     meme.addEventListener('click', () => {
       meme.remove();
     });
-    
 
     };
   
